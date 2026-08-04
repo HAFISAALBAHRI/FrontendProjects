@@ -86,6 +86,74 @@
 
             </table>
 
+             <h2>Employee Registration</h2>
+
+            <form>
+                <fieldset>
+
+                    <legend>Personal Information</legend>
+
+
+                    <!-- Full Name -->
+                    <label for="fullName">Full Name:</label>
+
+                    <input type="text"
+                           name="fullName"
+                           placeholder="Full Name"
+                           required
+                           minlength="2"
+                           maxlength="100">
+
+                    <br><br>
+
+
+                    <!-- Email -->
+                    <label for="email">Email:</label>
+
+                    <input type="email"
+                           name="email"
+                           placeholder="email"
+                           required>
+
+                    <br><br>
+
+
+                    <!-- Age -->
+                    <label for="age">Age:</label>
+
+                    <input type="number"
+                           placeholder="Age"
+                           name="age"
+                           min="18"
+                           max="100"
+                           >
+
+                    <br><br>
+
+
+                    <!-- Hire Date -->
+                    <label for="hireDate">Hire Date:</label>
+
+                    <input type="date"
+                          placeholder="Hire Date"
+                           name="hireDate">
+
+                    <br><br>
+
+
+                    <!-- Employee Code -->
+                    <label for="employeeCode">Employee Code:</label>
+
+                    <input type="text"
+                           placeholder="AB1234"
+                           name="employeeCode"
+                           pattern="[A-Z]{2}[0-9]{4}"
+                           required>
+
+                </fieldset>
+
+
+                <br>
         </section>
 
 <body>
