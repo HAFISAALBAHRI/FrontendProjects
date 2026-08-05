@@ -32,3 +32,59 @@
     </nav>
 
     <h2>Wireless Headphones</h2>
+<aside>
+        <h2>Filter Results</h2>
+
+        <form action="#" method="get">
+
+            <fieldset>
+                <legend>Brand</legend>
+
+                <label>
+                    <input type="checkbox" name="brand" value="soundmax">
+                    SoundMax
+                </label>
+
+                <label>
+                    <input type="checkbox" name="brand" value="audiopro">
+                    AudioPro
+                </label>
+
+                <label>
+                    <input type="checkbox" name="brand" value="novabeat">
+                    NovaBeat
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Customer Rating</legend>
+
+                <label>
+                    <input type="radio" name="rating" value="4">
+                    4 stars &amp; above
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="3">
+                    3 stars &amp; above
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="2">
+                    2 stars &amp; above
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Price Range</legend>
+
+                <label for="min-price">Minimum price</label>
+                <input type="number" id="min-price" name="min-price" min="0">
+
+                <label for="max-price">Maximum price</label>
+                <input type="number" id="max-price" name="max-price" min="0">
+
+                <button type="submit">Apply Filters</button>
+            </fieldset>
+
+        </form>
