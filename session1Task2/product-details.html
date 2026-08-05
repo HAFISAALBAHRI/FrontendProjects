@@ -7,3 +7,406 @@
 </head>
 
 <body>
+    <header>
+    <h1>NovaCart</h1>
+
+    <form action="#" method="get">
+        <label for="search">Search products:</label>
+        <input type="search" id="search" name="q">
+        <button type="submit">Search</button>
+    </form>
+
+    <nav aria-label="Account navigation">
+        <a href="#">Account</a>
+        <a href="#">Orders</a>
+        <a href="#">Cart</a>
+    </nav>
+</header>
+
+<main>
+
+    <nav aria-label="Breadcrumb">
+        <a href="#">Home</a>
+        &gt;
+        <a href="#">Electronics</a>
+        &gt;
+        <a href="#">Headphones</a>
+        &gt;
+        <span>Echo Wave X1</span>
+    </nav>
+  <article>
+
+        <header>
+            <h2>Echo Wave X1 Wireless Headphones</h2>
+            <p>Brand: <strong>NovaBeat</strong></p>
+
+            <p>
+                <span aria-label="4.5 out of 5 stars">★★★★☆</span>
+                <a href="#reviews">1,245 customer reviews</a>
+            </p>
+        </header>
+
+        <section aria-label="Product images">
+
+            <figure>
+                <img
+                    src="sources/1=.webp"
+                    alt="Echo Wave X1 wireless headphones front view">
+                <figcaption>Main product image</figcaption>
+            </figure>
+
+            <nav aria-label="Product image thumbnails">
+
+                <a href="#">
+                    <img
+                        src="sources/2=.webp"
+                        alt="Echo Wave X1 front view thumbnail"
+                        width="150"
+                        height="150">
+                </a>
+
+                <a href="#">
+                    <img
+                        src="sources/3=.webp"
+                        alt="Echo Wave X1 side view thumbnail"
+                         width="150"
+     height="150">
+                </a>
+
+                <a href="#">
+                    <img
+                        src="sources/2=.webp"
+                        alt="Echo Wave X1 folded view thumbnail"
+                         width="150"
+     height="150">
+                </a>
+
+                <a href="#">
+                    <img
+                        src="sources/4=.webp"
+                        alt="Echo Wave X1 carrying case thumbnail"
+                         width="150"
+     height="150">
+                </a>
+
+            </nav>
+    </section>
+
+        <section aria-labelledby="price-heading">
+
+            <h2 id="price-heading">Price</h2>
+
+            <p>
+                <del>$149.99</del>
+                <strong>$99.99</strong>
+            </p>
+
+            <p>
+                You save $50.00
+                (33% off)
+            </p>
+
+        </section>
+
+        <section aria-labelledby="variants-heading">
+
+            <h2 id="variants-heading">Choose a color</h2>
+
+            <form action="#" method="get">
+
+                <fieldset>
+                    <legend>Color</legend>
+
+                    <label>
+                        <input type="radio" name="color" value="black" checked>
+                        Midnight Black
+                    </label>
+
+                    <label>
+                        <input type="radio" name="color" value="white">
+                        Arctic White
+                    </label>
+
+                    <label>
+                        <input type="radio" name="color" value="blue">
+                        Ocean Blue
+                    </label>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+        <aside aria-labelledby="buy-heading">
+
+            <h2 id="buy-heading">Buy Now</h2>
+
+            <p>
+                <strong>In Stock</strong>
+            </p>
+
+            <p>Estimated delivery: August 8, 2026</p>
+
+            <form action="#" method="post">
+
+                <label for="quantity">Quantity:</label>
+
+                <select id="quantity" name="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+                <button type="submit">Add to Cart</button>
+                <button type="submit">Buy Now</button>
+
+            </form>
+
+        </aside>
+
+        <section aria-labelledby="description-heading">
+
+            <h2 id="description-heading">About this product</h2>
+
+            <p>
+                Echo Wave X1 is a fictional wireless headphone designed
+                for everyday music, calls, travel, and entertainment.
+            </p>
+
+            <h3>Key Features</h3>
+
+            <ul>
+                <li>Active noise cancellation</li>
+                <li>Up to 35 hours of battery life</li>
+                <li>Bluetooth 5.3 connectivity</li>
+                <li>Built-in microphone for calls</li>
+                <li>Comfortable over-ear design</li>
+            </ul>
+
+        </section>
+
+        <section aria-labelledby="specifications-heading">
+
+            <h2 id="specifications-heading">Specifications</h2>
+
+            <table>
+                <caption>Echo Wave X1 technical specifications</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Specification</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Model Number</th>
+                        <td>EWX1-2026</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Weight</th>
+                        <td>245 g</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Battery Life</th>
+                        <td>35 hours</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Bluetooth</th>
+                        <td>Version 5.3</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Dimensions</th>
+                        <td>18 × 16 × 8 cm</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Charging Port</th>
+                        <td>USB-C</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </article>
+
+    <section id="reviews" aria-labelledby="reviews-heading">
+
+        <h2 id="reviews-heading">Customer Reviews</h2>
+
+        <p>
+            Overall rating:
+            <strong>4.5 out of 5</strong>
+        </p>
+
+        <section aria-labelledby="rating-breakdown-heading">
+
+            <h3 id="rating-breakdown-heading">Rating Breakdown</h3>
+
+            <p>
+                5 stars:
+                <progress value="62" max="100">62%</progress>
+                62%
+            </p>
+
+            <p>
+                4 stars:
+                <progress value="20" max="100">20%</progress>
+                20%
+            </p>
+
+            <p>
+                3 stars:
+                <progress value="10" max="100">10%</progress>
+                10%
+            </p>
+
+            <p>
+                2 stars:
+                <progress value="5" max="100">5%</progress>
+                5%
+            </p>
+
+            <p>
+                1 star:
+                <progress value="3" max="100">3%</progress>
+                3%
+            </p>
+
+        </section>
+
+        <article>
+
+            <h3>Excellent headphones</h3>
+
+            <p>
+                <strong>Sarah M.</strong>
+            </p>
+
+            <p>
+                <span aria-label="5 out of 5 stars">★★★★★</span>
+            </p>
+
+            <time datetime="2026-07-20">July 20, 2026</time>
+
+            <p>
+                The headphones are comfortable and the sound quality
+                is excellent. The battery also lasts for a long time.
+            </p>
+
+        </article>
+
+        <article>
+
+            <h3>Great for travelling</h3>
+
+            <p>
+                <strong>Omar K.</strong>
+            </p>
+
+            <p>
+                <span aria-label="4 out of 5 stars">★★★★☆</span>
+            </p>
+
+            <time datetime="2026-07-15">July 15, 2026</time>
+
+            <p>
+                Noise cancellation works very well on airplanes.
+                The headphones are also easy to fold and carry.
+            </p>
+
+        </article>
+
+        <article>
+
+            <h3>Good value</h3>
+
+            <p>
+                <strong>Daniel R.</strong>
+            </p>
+
+            <p>
+                <span aria-label="4 out of 5 stars">★★★★☆</span>
+            </p>
+
+            <time datetime="2026-07-08">July 8, 2026</time>
+
+            <p>
+                Good sound and comfortable ear cushions.
+                I think they are a good choice for the price.
+            </p>
+
+        </article>
+
+    </section>
+
+    <section aria-labelledby="related-heading">
+
+        <h2 id="related-heading">Related Products</h2>
+
+        <article>
+            <img
+                src="sources/1+.webp"
+                alt="NovaBeat Mini headphones"
+                 width="150"
+     height="150">
+
+            <h3>
+                <a href="#">NovaBeat Mini Headphones</a>
+            </h3>
+
+            <p>$69.99</p>
+        </article>
+
+        <article>
+            <img
+                src="sources/2+.webp"
+                alt="SoundMax Pro headphones" width="150"
+                height="150">
+
+            <h3>
+                <a href="#">SoundMax Pro Headphones</a>
+            </h3>
+
+            <p>$119.99</p>
+        </article>
+
+        <article>
+            <img
+                src="sources/3+.jpg"
+                alt="CloudTune wireless headphones"
+                 width="150"
+                 height="150">
+
+            <h3>
+                <a href="#">CloudTune Wireless Headphones</a>
+            </h3>
+
+            <p>$84.99</p>
+        </article>
+
+    </section>
+
+</main>
+
+<footer>
+    <nav aria-label="Footer navigation">
+        <a href="#">About Us</a>
+        <a href="#">Customer Service</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+    </nav>
+
+    <p>&copy; 2026 NovaCart. All rights reserved.</p>
+</footer>
+
+</body>         
