@@ -63,3 +63,75 @@ switch (true) {
         console.log("F");
 
 }
+
+//Functions
+
+
+// 1. Function Declaration
+
+function isEvenDeclaration(number) {
+
+    return number % 2 === 0;
+
+}
+
+
+// 2. Function Expression
+
+const isEvenExpression = function (number) {
+
+    return number % 2 === 0;
+
+};
+
+
+// 3. Arrow Function
+
+const isEvenArrow = (number) => {
+
+    return number % 2 === 0;
+
+};
+
+
+// Test all three
+
+console.log(isEvenDeclaration(8));
+
+console.log(isEvenExpression(8));
+
+console.log(isEvenArrow(8));
+
+
+
+// 4. Default Parameter
+
+function greet(name = "Guest") {
+
+    return `Hello, ${name}`;
+
+}
+
+console.log(greet());
+
+console.log(greet("Hafisa"));
+
+
+
+// 5. Rest Parameter
+
+function sum(...numbers) {
+
+    let total = 0;
+
+    for (const number of numbers) {
+
+        total = total + number;
+
+    }
+
+    return total;
+
+}
+
+console.log(sum(1, 2, 3, 4));
