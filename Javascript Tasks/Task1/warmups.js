@@ -135,3 +135,34 @@ function sum(...numbers) {
 }
 
 console.log(sum(1, 2, 3, 4));
+
+// Keyword
+
+const person = {
+
+    name: "Hafisa",
+
+
+    // Regular function
+
+    regularMethod: function () {
+
+        return this.name;
+
+    },
+
+
+    // Arrow function
+
+    arrowMethod: () => {
+
+        return this.name;
+
+    }
+
+};
+
+
+console.log(person.regularMethod());
+
+console.log(person.arrowMethod());
