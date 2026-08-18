@@ -11,5 +11,3 @@ console.log(typeof value);
 value = "hello";
 
 console.log(typeof value);
-
-<script src="warmups.js"></script>
