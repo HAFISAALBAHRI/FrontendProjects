@@ -375,3 +375,49 @@ console.log(uniqueCustomers);
 //   "Huda Ali",
 //   "Salim Rashid"
 // ]
+
+// ==========================================
+// 3.5 FILTERING & SEARCH
+// ==========================================
+
+
+// Get the HTML elements
+const statusFilter =
+    document.getElementById("statusFilter");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+
+
+// ------------------------------------------
+// Filter Function
+// ------------------------------------------
+
+function getFilteredOrders(orderArray) {
+
+    const selectedStatus =
+        statusFilter.value;
+
+    const searchText =
+        searchInput.value
+            .trim()
+            .toLowerCase();
+
+
+    return orderArray.filter(order => {
+
+        const matchesStatus =
+            selectedStatus === "All" ||
+            order.status === selectedStatus;
+
+
+        const matchesSearch =
+            order.customer
+                .toLowerCase()
+                .includes(searchText);
+
+
+        return matchesStatus && matchesSearch;
+    });
+}
