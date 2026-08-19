@@ -302,3 +302,76 @@ console.log(allOrdersHaveItems);
 
 // Output:
 // true
+
+// ==========================================
+// 3.4 TOP CUSTOMERS
+// ==========================================
+
+
+// ------------------------------------------
+// Top 3 Highest-Value Orders
+// ------------------------------------------
+
+const topThreeOrders = [...orders]
+    .sort(
+        (a, b) =>
+            calculateOrderTotal(b) -
+            calculateOrderTotal(a)
+    )
+    .slice(0, 3);
+
+
+console.log("Top 3 Orders:");
+
+topThreeOrders.forEach(order => {
+
+    console.log(
+        order.customer,
+        calculateOrderTotal(order)
+    );
+
+});
+
+// Output:
+// Aisha Salem 280
+// Omar Khalid 270
+// Salim Rashid 210
+
+
+
+// ------------------------------------------
+// Unique Customers With Order Over 150
+// ------------------------------------------
+
+const customersOver150 = orders
+    .filter(
+        order =>
+            calculateOrderTotal(order) > 150
+    )
+    .map(
+        order => order.customer
+    );
+
+
+const uniqueCustomers = customersOver150.filter(
+    (customer, index, array) =>
+        array.indexOf(customer) === index
+);
+
+
+console.log("Unique Customers Over 150:");
+
+console.log(uniqueCustomers);
+
+// Output:
+// [
+//   "Ahmed Ali",
+//   "Omar Khalid",
+//   "Fatma Hassan",
+//   "Sara Ahmed",
+//   "Maryam Said",
+//   "Khalid Omar",
+//   "Aisha Salem",
+//   "Huda Ali",
+//   "Salim Rashid"
+// ]
