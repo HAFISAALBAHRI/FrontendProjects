@@ -248,3 +248,159 @@ console.log(
 
 // Output:
 // [25, 50, 75, 100]
+
+// ==========================================
+// 2.4 ARRAY METHODS
+// ==========================================
+
+const orders = [
+    { id: 1, customer: "Sara", total: 120, status: "Shipped" },
+    { id: 2, customer: "Ahmed", total: 250, status: "Pending" },
+    { id: 3, customer: "Maha", total: 85, status: "Cancelled" },
+    { id: 4, customer: "Ali", total: 310, status: "Shipped" },
+    { id: 5, customer: "Fatma", total: 150, status: "Pending" },
+    { id: 6, customer: "Omar", total: 90, status: "Shipped" },
+    { id: 7, customer: "Noor", total: 220, status: "Cancelled" },
+    { id: 8, customer: "Maryam", total: 180, status: "Shipped" }
+];
+
+
+// ------------------------------------------
+// reduce()
+// Combined total of all orders
+// ------------------------------------------
+
+const combinedTotal = orders.reduce(
+    (sum, order) => sum + order.total,
+    0
+);
+
+console.log(combinedTotal);
+
+// Output:
+// 1405
+
+
+
+// ------------------------------------------
+// filter()
+// Only shipped orders
+// ------------------------------------------
+
+const shippedOrders = orders.filter(
+    order => order.status === "Shipped"
+);
+
+console.log(shippedOrders);
+
+// Output:
+// [
+//   { id: 1, customer: "Sara", total: 120, status: "Shipped" },
+//   { id: 4, customer: "Ali", total: 310, status: "Shipped" },
+//   { id: 6, customer: "Omar", total: 90, status: "Shipped" },
+//   { id: 8, customer: "Maryam", total: 180, status: "Shipped" }
+// ]
+
+
+
+// ------------------------------------------
+// map()
+// Array of customer names
+// ------------------------------------------
+
+const customerNames = orders.map(
+    order => order.customer
+);
+
+console.log(customerNames);
+
+// Output:
+// ["Sara", "Ahmed", "Maha", "Ali", "Fatma", "Omar", "Noor", "Maryam"]
+
+
+
+// ------------------------------------------
+// find()
+// First order over 200
+// ------------------------------------------
+
+const firstOrderOver200 = orders.find(
+    order => order.total > 200
+);
+
+console.log(firstOrderOver200);
+
+// Output:
+// { id: 2, customer: "Ahmed", total: 250, status: "Pending" }
+
+
+
+// ------------------------------------------
+// some()
+// Check if any order is Cancelled
+// ------------------------------------------
+
+const hasCancelledOrder = orders.some(
+    order => order.status === "Cancelled"
+);
+
+console.log(hasCancelledOrder);
+
+// Output:
+// true
+
+
+
+// ------------------------------------------
+// every()
+// Check if all totals are greater than 0
+// ------------------------------------------
+
+const allTotalsPositive = orders.every(
+    order => order.total > 0
+);
+
+console.log(allTotalsPositive);
+
+// Output:
+// true
+
+
+
+// ------------------------------------------
+// sort()
+// Sort highest total first
+// ------------------------------------------
+
+const sortedOrders = [...orders].sort(
+    (a, b) => b.total - a.total
+);
+
+console.log(sortedOrders);
+
+// Output:
+// [
+//   { id: 4, customer: "Ali", total: 310, status: "Shipped" },
+//   { id: 2, customer: "Ahmed", total: 250, status: "Pending" },
+//   { id: 7, customer: "Noor", total: 220, status: "Cancelled" },
+//   { id: 8, customer: "Maryam", total: 180, status: "Shipped" },
+//   { id: 5, customer: "Fatma", total: 150, status: "Pending" },
+//   { id: 1, customer: "Sara", total: 120, status: "Shipped" },
+//   { id: 6, customer: "Omar", total: 90, status: "Shipped" },
+//   { id: 3, customer: "Maha", total: 85, status: "Cancelled" }
+// ]
+
+
+
+// ------------------------------------------
+// Chain filter() + map()
+// ------------------------------------------
+
+const shippedCustomers = orders
+    .filter(order => order.status === "Shipped")
+    .map(order => order.customer);
+
+console.log(shippedCustomers);
+
+// Output:
+// ["Sara", "Ali", "Omar", "Maryam"]
