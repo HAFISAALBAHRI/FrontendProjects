@@ -115,3 +115,66 @@ for (const city of cities) {
 // Riyadh
 // Kuwait City
 // Dubai
+
+// ==========================================
+// 2.2 DESTRUCTURING
+// ==========================================
+
+
+// Given order object
+const order = {
+    id: 101,
+    customer: "Sara Ahmed",
+    total: 249.99,
+    status: "Shipped"
+};
+
+
+// ------------------------------------------
+// Object Destructuring
+// ------------------------------------------
+
+const { customer, total } = order;
+
+console.log(customer);
+console.log(total);
+
+// Output:
+// Sara Ahmed
+// 249.99
+
+
+
+// ------------------------------------------
+// Array Destructuring + Rest
+// ------------------------------------------
+
+const numbers = [10, 20, 30, 40, 50];
+
+const [firstNumber, secondNumber, ...remainingNumbers] = numbers;
+
+console.log(firstNumber);
+console.log(secondNumber);
+console.log(remainingNumbers);
+
+// Output:
+// 10
+// 20
+// [30, 40, 50]
+
+
+
+// ------------------------------------------
+// Destructuring in Function Parameters
+// ------------------------------------------
+
+function orderSummary({ id, customer, total, status }) {
+
+    return `Order ${id} - ${customer} - ${total} OMR - ${status}`;
+}
+
+
+console.log(orderSummary(order));
+
+// Output:
+// Order 101 - Sara Ahmed - 249.99 OMR - Shipped
