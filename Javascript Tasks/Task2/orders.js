@@ -171,3 +171,22 @@ console.log(orders);
 
 // Output:
 // Array(15) containing the 15 order objects above.
+
+// ==========================================
+// 3.2 PER-ORDER TOTAL
+// ==========================================
+
+function calculateOrderTotal(order) {
+
+    return order.items.reduce(
+        (sum, item) => sum + (item.price * item.quantity),
+        0
+    );
+}
+
+
+// Test the function
+console.log(calculateOrderTotal(orders[0]));
+
+// Output:
+// 65
