@@ -190,3 +190,115 @@ console.log(calculateOrderTotal(orders[0]));
 
 // Output:
 // 65
+
+// ==========================================
+// 3.3 DASHBOARD SUMMARY NUMBERS
+// ==========================================
+
+
+// ------------------------------------------
+// Total Revenue
+// ------------------------------------------
+
+const totalRevenue = orders.reduce(
+    (sum, order) => sum + calculateOrderTotal(order),
+    0
+);
+
+console.log("Total Revenue:");
+console.log(totalRevenue);
+
+// Output:
+// 2294
+
+
+
+// ------------------------------------------
+// Number of Pending Orders
+// ------------------------------------------
+
+const pendingCount = orders.filter(
+    order => order.status === "Pending"
+).length;
+
+console.log("Pending Orders:");
+console.log(pendingCount);
+
+// Output:
+// 6
+
+
+
+// ------------------------------------------
+// Number of Shipped Orders
+// ------------------------------------------
+
+const shippedCount = orders.filter(
+    order => order.status === "Shipped"
+).length;
+
+console.log("Shipped Orders:");
+console.log(shippedCount);
+
+// Output:
+// 6
+
+
+
+// ------------------------------------------
+// Number of Cancelled Orders
+// ------------------------------------------
+
+const cancelledCount = orders.filter(
+    order => order.status === "Cancelled"
+).length;
+
+console.log("Cancelled Orders:");
+console.log(cancelledCount);
+
+// Output:
+// 3
+
+
+
+// ------------------------------------------
+// Highest-Value Order
+// ------------------------------------------
+
+const highestOrder = orders.reduce(
+    (highest, current) => {
+
+        if (
+            calculateOrderTotal(current) >
+            calculateOrderTotal(highest)
+        ) {
+            return current;
+        }
+
+        return highest;
+    }
+);
+
+console.log("Highest Value Order:");
+console.log(highestOrder.customer);
+console.log(calculateOrderTotal(highestOrder));
+
+// Output:
+// Aisha Salem
+// 280
+
+
+
+// ------------------------------------------
+// Check Every Order Has At Least One Item
+// ------------------------------------------
+
+const allOrdersHaveItems = orders.every(
+    order => order.items.length > 0
+);
+
+console.log("Every order has at least one item:");
+console.log(allOrdersHaveItems);
+
+// Output:
+// true
