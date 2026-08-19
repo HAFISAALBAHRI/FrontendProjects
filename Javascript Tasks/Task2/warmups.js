@@ -178,3 +178,73 @@ console.log(orderSummary(order));
 
 // Output:
 // Order 101 - Sara Ahmed - 249.99 OMR - Shipped
+
+// ==========================================
+// 2.3 SPREAD & REST
+// ==========================================
+
+
+// ------------------------------------------
+// Combine Arrays Using Spread
+// ------------------------------------------
+
+const onlineOrders = [101, 102, 103];
+
+const storeOrders = [104, 105, 106];
+
+const allOrderIds = [
+    ...onlineOrders,
+    ...storeOrders
+];
+
+console.log(allOrderIds);
+
+// Output:
+// [101, 102, 103, 104, 105, 106]
+
+
+
+// ------------------------------------------
+// Copy Object and Change Status
+// ------------------------------------------
+
+const originalOrder = {
+    id: 201,
+    customer: "Maha Ali",
+    total: 175,
+    status: "Pending"
+};
+
+
+const cancelledOrder = {
+    ...originalOrder,
+    status: "Cancelled"
+};
+
+
+console.log(originalOrder);
+console.log(cancelledOrder);
+
+// Output:
+// { id: 201, customer: "Maha Ali", total: 175, status: "Pending" }
+
+// { id: 201, customer: "Maha Ali", total: 175, status: "Cancelled" }
+
+
+
+// ------------------------------------------
+// Rest Parameter
+// ------------------------------------------
+
+function collectTotals(...totals) {
+
+    return totals;
+}
+
+
+console.log(
+    collectTotals(25, 50, 75, 100)
+);
+
+// Output:
+// [25, 50, 75, 100]
