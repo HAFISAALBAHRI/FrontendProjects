@@ -404,3 +404,4 @@ console.log(shippedCustomers);
 
 // Output:
 // ["Sara", "Ali", "Omar", "Maryam"]
+
