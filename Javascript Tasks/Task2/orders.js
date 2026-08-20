@@ -540,3 +540,70 @@ function createOrderCard(
         </div>
     `;
 }
+// ==========================================
+// FINAL - UPDATE DASHBOARD
+// ==========================================
+
+function updateDashboard() {
+
+    let currentOrders;
+
+
+    // If discount is ON
+    if (discountToggle.checked) {
+
+        currentOrders =
+            createDiscountedOrders(orders);
+
+    }
+
+    // If discount is OFF
+    else {
+
+        currentOrders = orders;
+
+    }
+
+
+    // Update summary numbers
+    renderSummary(currentOrders);
+
+
+    // Update top 3 orders
+    renderTopOrders(currentOrders);
+
+
+    // Update unique customers
+    renderUniqueCustomers(currentOrders);
+
+
+    // Update visible order cards
+    renderOrders(currentOrders);
+}
+
+
+// ==========================================
+// EVENT LISTENERS
+// ==========================================
+
+statusFilter.addEventListener(
+    "change",
+    updateDashboard
+);
+
+searchInput.addEventListener(
+    "input",
+    updateDashboard
+);
+
+discountToggle.addEventListener(
+    "change",
+    updateDashboard
+);
+
+
+// ==========================================
+// FIRST PAGE LOAD
+// ==========================================
+
+updateDashboard();
