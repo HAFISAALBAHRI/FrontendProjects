@@ -685,3 +685,43 @@ function renderSummary(orderArray) {
     document.getElementById("allHaveItems").textContent =
         allOrdersHaveItems ? "Yes" : "No";
 }
+
+// ==========================================
+// RENDER UNIQUE CUSTOMERS
+// ==========================================
+
+function renderUniqueCustomers(orderArray) {
+
+    const customersOver150 =
+        orderArray
+            .filter(
+                order =>
+                    calculateOrderTotal(order) > 150
+            )
+            .map(
+                order => order.customer
+            );
+
+
+    const uniqueCustomers =
+        customersOver150.filter(
+            (customer, index, array) =>
+                array.indexOf(customer) === index
+        );
+
+
+    const uniqueCustomersElement =
+        document.getElementById("uniqueCustomers");
+
+
+    uniqueCustomersElement.innerHTML = "";
+
+
+    uniqueCustomers.forEach(customer => {
+
+        uniqueCustomersElement.innerHTML += `
+            <p>${customer}</p>
+        `;
+
+    });
+}
