@@ -607,3 +607,81 @@ discountToggle.addEventListener(
 // ==========================================
 
 updateDashboard();
+
+// ==========================================
+// RENDER SUMMARY
+// ==========================================
+
+function renderSummary(orderArray) {
+
+    const totalRevenue =
+        orderArray.reduce(
+            (sum, order) =>
+                sum + calculateOrderTotal(order),
+            0
+        );
+
+
+    const pendingCount =
+        orderArray.filter(
+            order => order.status === "Pending"
+        ).length;
+
+
+    const shippedCount =
+        orderArray.filter(
+            order => order.status === "Shipped"
+        ).length;
+
+
+    const cancelledCount =
+        orderArray.filter(
+            order => order.status === "Cancelled"
+        ).length;
+
+
+    const highestOrder =
+        orderArray.reduce(
+            (highest, current) => {
+
+                if (
+                    calculateOrderTotal(current) >
+                    calculateOrderTotal(highest)
+                ) {
+                    return current;
+                }
+
+                return highest;
+            }
+        );
+
+
+    const allOrdersHaveItems =
+        orderArray.every(
+            order => order.items.length > 0
+        );
+
+
+    document.getElementById("totalRevenue").textContent =
+        `${totalRevenue.toFixed(3)} OMR`;
+
+
+    document.getElementById("pendingCount").textContent =
+        pendingCount;
+
+
+    document.getElementById("shippedCount").textContent =
+        shippedCount;
+
+
+    document.getElementById("cancelledCount").textContent =
+        cancelledCount;
+
+
+    document.getElementById("highestOrder").textContent =
+        `${highestOrder.customer} - ${calculateOrderTotal(highestOrder).toFixed(3)} OMR`;
+
+
+    document.getElementById("allHaveItems").textContent =
+        allOrdersHaveItems ? "Yes" : "No";
+}
