@@ -421,3 +421,41 @@ function getFilteredOrders(orderArray) {
         return matchesStatus && matchesSearch;
     });
 }
+
+// ==========================================
+// 3.6 IMMUTABLE DISCOUNT PREVIEW
+// ==========================================
+
+const discountToggle =
+    document.getElementById("discountToggle");
+
+
+// Create a completely new discounted array
+function createDiscountedOrders(orderArray) {
+
+    return orderArray.map(order => {
+
+        return {
+
+            // Copy the order object
+            ...order,
+
+            // Create a new items array
+            items: order.items.map(item => {
+
+                return {
+
+                    // Copy each item object
+                    ...item,
+
+                    // Apply 15% discount
+                    price: item.price * 0.85
+
+                };
+
+            })
+
+        };
+
+    });
+}
