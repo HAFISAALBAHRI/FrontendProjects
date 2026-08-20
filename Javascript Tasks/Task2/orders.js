@@ -605,7 +605,40 @@ discountToggle.addEventListener(
 // ==========================================
 // FIRST PAGE LOAD
 // ==========================================
+// ==========================================
+// RENDER TOP 3 ORDERS
+// ==========================================
 
+function renderTopOrders(orderArray) {
+
+    const topThreeOrders = [...orderArray]
+        .sort(
+            (a, b) =>
+                calculateOrderTotal(b) -
+                calculateOrderTotal(a)
+        )
+        .slice(0, 3);
+
+
+    const topOrders =
+        document.getElementById("topOrders");
+
+
+    topOrders.innerHTML = "";
+
+
+    topThreeOrders.forEach(order => {
+
+        topOrders.innerHTML += `
+            <p>
+                ${order.customer}
+                -
+                ${calculateOrderTotal(order).toFixed(3)} OMR
+            </p>
+        `;
+
+    });
+}
 updateDashboard();
 
 // ==========================================
