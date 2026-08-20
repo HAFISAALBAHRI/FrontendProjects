@@ -460,3 +460,83 @@ function createDiscountedOrders(orderArray) {
     });
 }
 
+// ==========================================
+// 3.7 RENDERING
+// ==========================================
+
+const orderList =
+    document.getElementById("orderList");
+
+
+// Destructuring directly in the parameter
+function createOrderCard(
+    {
+        id,
+        customer,
+        status,
+        date,
+        items
+    }
+) {
+
+    const order = {
+        id,
+        customer,
+        status,
+        date,
+        items
+    };
+
+
+    const total =
+        calculateOrderTotal(order);
+
+
+    return `
+        <div class="col-md-6 col-lg-4">
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">
+                        Order #${id}
+                    </h5>
+
+
+                    <p class="card-text">
+                        <strong>Customer:</strong>
+                        ${customer}
+                    </p>
+
+
+                    <p class="card-text">
+                        <strong>Status:</strong>
+                        ${status}
+                    </p>
+
+
+                    <p class="card-text">
+                        <strong>Date:</strong>
+                        ${date}
+                    </p>
+
+
+                    <p class="card-text">
+                        <strong>Items:</strong>
+                        ${items.length}
+                    </p>
+
+
+                    <p class="card-text">
+                        <strong>Total:</strong>
+                        ${total.toFixed(3)} OMR
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+}
